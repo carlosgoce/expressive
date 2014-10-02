@@ -55,6 +55,7 @@ Execute::ifFalse($value, \Closure $callback);
 ## CarlosGoce\Expressive\ArrayTask
 ```php
 ArrayTask::keys($array);
+ArrayTask::changeKeysCase(array $array, $case = CASE_LOWER);
 ```
 
 ## Express Facade
