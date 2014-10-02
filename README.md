@@ -54,11 +54,14 @@ Execute::ifFalse($value, \Closure $callback);
 
 #### CarlosGoce\Expressive\ArrayTask
 ```php
-ArrayTask::keys($array);
 ArrayTask::changeKeysCase(array $array, $case = CASE_LOWER);
-ArrayTask::values(array $array);
 ArrayTask::count(array $array);
+ArrayTask::keys($array);
+ArrayTask::pluck(array $array, $key)
+ArrayTask::size(array $array); //alias of count
 ArrayTask::shuffle(array $array);
+ArrayTask::values(array $array);
+ArrayTask::walk(array $array, \Closure $function);
 ```
 
 #### Express Facade

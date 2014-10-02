@@ -63,4 +63,44 @@ class ArrayTask extends AllowNonStaticCalls
 
         return $newArray;
     }
+
+    /**
+     * Alias of count
+     * @param array $array
+     * @return int
+     */
+    static function size(array $array)
+    {
+        return self::count($array);
+    }
+
+    /**
+     * @param array $array
+     * @param $key
+     * @return array
+     */
+    static function pluck(array $array, $key)
+    {
+        $plucked = [];
+
+        array_walk($array, function($row) use (&$plucked, $key) {
+            $plucked[] = $row[$key];
+        });
+
+        return $plucked;
+    }
+
+    /**
+     * Returns a new array after running the closure
+     * with a value/key arguments. You can use reference on the value to modify it
+     * @param array $array
+     * @param callable $function
+     * @return array
+     */
+    static function walk(array $array, \Closure $function)
+    {
+        array_walk($array, $function);
+
+        return $array;
+    }
 }

@@ -3,6 +3,7 @@
 namespace spec\CarlosGoce\Expressive;
 
 use CarlosGoce\Expressive\ArrayTask;
+use CarlosGoce\Expressive\Is;
 use PhpSpec\Exception\Exception;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -41,6 +42,7 @@ class ArrayTaskSpec extends ObjectBehavior
     {
         $this->count([])->shouldReturn(0);
         $this->count([1, 2, 3])->shouldReturn(3);
+        $this->size([1,2,3,4,5])->shouldReturn(5);
     }
 
     function it_can_shuffle_elements_of_an_array()
@@ -58,6 +60,31 @@ class ArrayTaskSpec extends ObjectBehavior
             if ( ! in_array($value, $result)) {
                 throw new Exception('Value not found in the new array: ' . $value);
             }
+        }
+    }
+
+    function it_can_pluck_values_by_key_from_an_array()
+    {
+        $array = [
+            ['id' => 1, 'code' => 100],
+            ['id' => 2, 'code' => 200],
+            ['id' => 3, 'code' => 300],
+        ];
+
+        $this->pluck($array, 'code')->shouldReturn([100, 200, 300]);
+        $this->pluck($array, 'id')->shouldReturn([1, 2, 3]);
+    }
+
+    function it_can_walk_throught_an_array_modifying_its_values()
+    {
+        $array = [1,2,3];
+
+        $array = $this->walk($array, function(&$value, $key) {
+            $value += 10;
+        });
+
+        if (Is::notEqualTo([11,12,13], $array->getWrappedObject())) {
+            throw new \Exception();
         }
     }
 }
