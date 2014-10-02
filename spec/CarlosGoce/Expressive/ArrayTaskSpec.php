@@ -3,6 +3,7 @@
 namespace spec\CarlosGoce\Expressive;
 
 use CarlosGoce\Expressive\ArrayTask;
+use PhpSpec\Exception\Exception;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -42,4 +43,21 @@ class ArrayTaskSpec extends ObjectBehavior
         $this->count([1, 2, 3])->shouldReturn(3);
     }
 
+    function it_can_shuffle_elements_of_an_array()
+    {
+        $array  = range(0, 50);
+        $values = array_values($array);
+
+        $result = $this->shuffle($array)->getWrappedObject();
+
+        if ($values === $result) {
+            throw new Exception('Array was not shuffled');
+        }
+
+        foreach ($values as $value) {
+            if ( ! in_array($value, $result)) {
+                throw new Exception('Value not found in the new array: ' . $value);
+            }
+        }
+    }
 }

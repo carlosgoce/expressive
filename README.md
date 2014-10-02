@@ -58,6 +58,7 @@ ArrayTask::keys($array);
 ArrayTask::changeKeysCase(array $array, $case = CASE_LOWER);
 ArrayTask::values(array $array);
 ArrayTask::count(array $array);
+ArrayTask::shuffle(array $array);
 ```
 
 #### Express Facade

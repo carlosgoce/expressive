@@ -36,8 +36,31 @@ class ArrayTask extends AllowNonStaticCalls
         return array_values($array);
     }
 
+    /**
+     * @param array $array
+     * @return int
+     */
     static function count(array $array)
     {
         return count($array);
+    }
+
+    /**
+     * Shuffles an array an its keys
+     * @param array $array
+     * @return array
+     */
+    static function shuffle(array $array)
+    {
+        $newArray = [];
+        $keys = array_keys($array);
+
+        shuffle($keys);
+
+        foreach($keys as $key) {
+            $newArray[$key] = $array[$key];
+        }
+
+        return $newArray;
     }
 }
