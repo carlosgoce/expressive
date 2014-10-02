@@ -22,12 +22,32 @@ class IsSpec extends ObjectBehavior
     {
         $this->true(true)->shouldReturn(true);
         $this->true(false)->shouldReturn(false);
+        $this->true(1)->shouldReturn(false);
+        $this->true('1')->shouldReturn(false);
     }
 
     function it_can_check_if_false()
     {
         $this->false(false)->shouldReturn(true);
         $this->false(true)->shouldReturn(false);
+        $this->false(0)->shouldReturn(false);
+        $this->false('0')->shouldReturn(false);
+    }
+
+    function it_can_check_if_is_like()
+    {
+        $this->like(true)->shouldReturn(true);
+        $this->like(false)->shouldReturn(false);
+        $this->like(1)->shouldReturn(true);
+        $this->like('1')->shouldReturn(true);
+    }
+
+    function it_can_check_if_is_not_like()
+    {
+        $this->false(false)->shouldReturn(true);
+        $this->false(true)->shouldReturn(false);
+        $this->false(0)->shouldReturn(false);
+        $this->false('0')->shouldReturn(false);
     }
 
     function it_can_check_if_element_is_in_array()

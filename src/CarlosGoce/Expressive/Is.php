@@ -8,12 +8,22 @@ class Is extends Express
 {
     static function true($condition)
     {
-        return ! empty($condition) && $condition === true;
+        return $condition === true;
     }
 
     static function false($condition)
     {
-        return ! self::true($condition);
+        return $condition === false;
+    }
+
+    static function like($condition)
+    {
+        return $condition == true;
+    }
+
+    static function notLike($condition)
+    {
+        return $condition == false;
     }
 
     static function inArray($needle, array $haystack)
