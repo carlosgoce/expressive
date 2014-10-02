@@ -7,6 +7,7 @@ Adds syntactical sugar to your conditional checks and more.
 ## Notes
 - Like methods use == comparison instead of ===
 - You can make your method call in static or non static way
+- If a method is not found an UndefinedMethodException will be throwed
 
 ### use CarlosGoce\Expressive\Is
 ```php
