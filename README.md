@@ -63,3 +63,73 @@ Express::execute()->it($closure);
 Express::is()->file($file);
 Express::raise()->unlessTrue($condition, \Exception $exception);
 ```
+
+## Usage
+Some real world examples:
+```php
+//As static class
+use CarlosGoce\Expressive\Is;
+use CarlosGoce\Expressive\Raise;
+
+class MyController
+{
+    public function myMethod()
+    {
+        //Easier to use
+        Raise::unlessTrue(Is::null($someValue), new \Exception('Some value is null') );
+    }
+}
+
+//Using the express facade
+use CarlosGoce\Expressive\Facade\Express;
+
+class MyController
+{
+    public function myMethod()
+    {
+        //Easier to use and needs only one import but is more verbose
+        Express::raise()->unlessTrue(Express::Is->null($someValue), new \Exception('Some value is null') );
+    }
+}
+
+//As non static class injected with IOC
+use CarlosGoce\Expressive\Is;
+use CarlosGoce\Expressive\Raise;
+
+class MyController
+{
+    protected $raise;
+    protected $is;
+
+    public function __construct(Raise $raise, Is $is)
+    {
+        $this->raise = $raise;
+        $this->is = $is;
+    }
+
+    public function myMethod()
+    {
+        //Easier to test
+        $this->raise->unlessTrue($this->is->null($someValue), new \Exception('Some value is null') );
+    }
+}
+
+//With the Express facade
+use CarlosGoce\Expressive\Facade\Express;
+
+class MyController
+{
+    protected $express;
+
+    public function __construct(Express $express)
+    {
+        $this->express = $express;
+    }
+
+    public function myMethod()
+    {
+        //easier to test and use lest imports but is more verbose
+        $this->express->raise()->unlessTrue( $this->express->is()->null($someValue), new \Exception('Some value is null') );
+    }
+}
+```
