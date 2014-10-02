@@ -47,4 +47,6 @@ Raise::unlessFalse($condition, \Exception $exception);
 ```php
 //Executes a closure and returns its value
 act(\Closure $callback);
+ifTrue($condition, \Closure $callback);
+ifFalse($condition, \Closure $callback);
 ```

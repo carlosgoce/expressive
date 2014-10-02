@@ -25,4 +25,16 @@ class ExecuteSpec extends ObjectBehavior
         })->shouldReturn(true);
     }
 
+    function it_executes_a_closure_if_condition_is_true()
+    {
+        $closure = function() {
+            return true;
+        };
+
+        $this->ifTrue(true, $closure)->shouldReturn(true);
+        $this->ifTrue(false, $closure)->shouldReturn(null);
+        $this->ifFalse(true, $closure)->shouldReturn(null);
+        $this->ifFalse(false, $closure)->shouldReturn(true);
+    }
+
 }
