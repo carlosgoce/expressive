@@ -35,4 +35,10 @@ class IsSpec extends ObjectBehavior
         $this->inArray(1, [1, 2, 3])->shouldReturn(true);
         $this->inArray(4, [1, 2, 3])->shouldReturn(false);
     }
+
+    function it_checks_existence_of_a_file()
+    {
+        $this->file(__FILE__)->shouldReturn(true);
+        $this->file('unexistent-file')->shouldReturn(false);
+    }
 }

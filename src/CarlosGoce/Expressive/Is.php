@@ -20,4 +20,9 @@ class Is extends Express
     {
         return in_array($needle, $haystack);
     }
+
+    static function file($file)
+    {
+        return is_file($file);
+    }
 }

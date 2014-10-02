@@ -8,6 +8,8 @@ Adds syntactical sugar to your conditional checks.
 ```php
 Is::true($condition);
 Is::false($condition);
+Is::inArray($needle, array $haystack);
+Is::file($file);
 ```
 
 ## use CarlosGoce\Expressive\Raise
