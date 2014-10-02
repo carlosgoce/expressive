@@ -6,6 +6,7 @@ Adds syntactical sugar to your conditional checks.
 
 ### Notes
 · Like methods use == comparison instead of ===
+· You can make your method call in static or non static way
 
 ## use CarlosGoce\Expressive\Is
 ```php
