@@ -26,6 +26,26 @@ class Is extends Express
         return $condition == false;
     }
 
+    static function number($number)
+    {
+        return is_int($number) || is_float($number);
+    }
+
+    static function notNumber($number)
+    {
+        return ! self::number($number);
+    }
+
+    static function numeric($number)
+    {
+        return is_numeric($number);
+    }
+
+    static function notNumeric($number)
+    {
+        return ! is_numeric($number);
+    }
+
     static function inArray($needle, array $haystack)
     {
         return in_array($needle, $haystack);

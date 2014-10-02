@@ -50,6 +50,36 @@ class IsSpec extends ObjectBehavior
         $this->false('0')->shouldReturn(false);
     }
 
+    function it_checks_if_is_a_number()
+    {
+        $this->number(1)->shouldReturn(true);
+        $this->number(500.45)->shouldReturn(true);
+        $this->number('1')->shouldReturn(false);
+        $this->number(true)->shouldReturn(false);
+    }
+
+    function it_checks_if_is_not_a_number()
+    {
+        $this->notNumber(1)->shouldReturn(false);
+        $this->notNumber(500.45)->shouldReturn(false);
+        $this->notNumber('1')->shouldReturn(true);
+        $this->notNumber(true)->shouldReturn(true);
+    }
+
+    function it_checks_if_is_like_a_number()
+    {
+        $this->numeric(1)->shouldReturn(true);
+        $this->numeric('1')->shouldReturn(true);
+        $this->numeric(true)->shouldReturn(false);
+    }
+
+    function it_checks_if_is_not_like_a_number()
+    {
+        $this->notNumeric(1)->shouldReturn(false);
+        $this->notNumeric('1')->shouldReturn(false);
+        $this->notNumeric(true)->shouldReturn(true);
+    }
+
     function it_can_check_if_element_is_in_array()
     {
         $this->inArray(1, [1, 2, 3])->shouldReturn(true);

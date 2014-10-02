@@ -15,6 +15,10 @@ Is::inArray($needle, array $haystack);
 Is::file($file);
 Is::like($condition);
 Is::notLike($condition);
+Is::number($number);
+Is::notNumber($number);
+Is::numeric($number);
+Is::notNumeric($number);
 ```
 
 ## use CarlosGoce\Expressive\Raise
