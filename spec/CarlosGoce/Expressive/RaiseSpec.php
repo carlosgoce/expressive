@@ -2,7 +2,7 @@
 
 namespace spec\CarlosGoce\Expressive;
 
-use CarlosGoce\Sugarizer\Raise;
+use CarlosGoce\Expressive\Raise;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -23,6 +23,13 @@ class RaiseSpec extends ObjectBehavior
         $this->shouldThrow(new \PhpSpec\Exception\Exception())->duringIfTrue(true, new \PhpSpec\Exception\Exception);
         $this->shouldThrow(new \Exception())->duringIfTrue(true, new \Exception);
         $this->ifTrue(false, new \Exception());
+    }
+
+    function it_can_throw_exceptions_checking_if_false()
+    {
+        $this->shouldThrow(new \PhpSpec\Exception\Exception())->duringIfFalse(false, new \PhpSpec\Exception\Exception);
+        $this->shouldThrow(new \Exception())->duringIfFalse(false, new \Exception);
+        $this->ifFalse(true, new \Exception());
     }
 
 }

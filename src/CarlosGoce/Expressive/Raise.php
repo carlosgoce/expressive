@@ -2,16 +2,20 @@
 
 namespace CarlosGoce\Expressive;
 
-class Raise
-{
-    function __call($name, $arguments)
-    {
-        return self::$name($arguments);
-    }
+use CarlosGoce\Expressive\Behavior\Express;
 
-    public function ifTrue($condition, \Exception $exception)
+class Raise extends Express
+{
+    static function ifTrue($condition, \Exception $exception)
     {
         if (Is::true($condition)) {
+            throw $exception;
+        }
+    }
+
+    static function ifFalse($condition, \Exception $exception)
+    {
+        if (Is::false($condition)) {
             throw $exception;
         }
     }

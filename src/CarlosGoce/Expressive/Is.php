@@ -2,13 +2,10 @@
 
 namespace CarlosGoce\Expressive;
 
-class Is
-{
-    function __call($name, $arguments)
-    {
-        return self::$name($arguments);
-    }
+use CarlosGoce\Expressive\Behavior\Express;
 
+class Is extends Express
+{
     static function true($condition)
     {
         return ! empty($condition) && $condition === true;

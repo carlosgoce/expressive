@@ -2,7 +2,7 @@
 
 namespace spec\CarlosGoce\Expressive;
 
-use CarlosGoce\Sugarizer\Is;
+use CarlosGoce\Expressive\Is;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -17,7 +17,7 @@ class IsSpec extends ObjectBehavior
     {
         $this->shouldHaveType('CarlosGoce\Expressive\Is');
     }
-
+    
     function it_can_check_if_true()
     {
         $this->true(true)->shouldReturn(true);
