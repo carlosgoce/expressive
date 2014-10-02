@@ -12,16 +12,16 @@ Adds syntactical sugar to your conditional checks and more.
 ### use CarlosGoce\Expressive\Is
 ```php
 //Conditionals
-Is::true($condition);
-Is::false($condition);
-Is::equalTo($expected, $subject);
-Is::notEqualTo($expected, $subject);
-Is::like($expected, $subject);
-Is::notLike($expected, $subject);
-Is::void($condition);
-Is::notVoid($condition);
-Is::null($condition);
-Is::notNull($condition);
+Is::true($value);
+Is::false($value);
+Is::equalTo($expected, $value);
+Is::notEqualTo($expected, $value);
+Is::like($expected, $value);
+Is::notLike($expected, $value);
+Is::void($value);
+Is::notVoid($value);
+Is::null($value);
+Is::notNull($value);
 
 //Arrays
 Is::inArray($needle, array $haystack);
@@ -48,8 +48,8 @@ Raise::unlessFalse($condition, \Exception $exception);
 ```php
 //Executes a closure and returns its value
 Execute::it(\Closure $callback);
-Execute::ifTrue($condition, \Closure $callback);
-Execute::ifFalse($condition, \Closure $callback);
+Execute::ifTrue($value, \Closure $callback);
+Execute::ifFalse($value, \Closure $callback);
 ```
 
 ## Express Facade

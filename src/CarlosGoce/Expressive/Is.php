@@ -6,54 +6,54 @@ use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
 
 class Is extends AllowNonStaticCalls
 {
-    static function true($condition)
+    static function true($value)
     {
-        return $condition === true;
+        return $value === true;
     }
 
-    static function false($condition)
+    static function false($value)
     {
-        return $condition === false;
+        return $value === false;
     }
 
-    static function equalTo($expected, $subject)
+    static function equalTo($expected, $value)
     {
-        return $expected === $subject;
+        return $expected === $value;
     }
 
-    static function notEqualTo($expected, $subject)
+    static function notEqualTo($expected, $value)
     {
-        return $expected !== $subject;
+        return $expected !== $value;
     }
 
-    static function like($expected, $subject)
+    static function like($expected, $value)
     {
-        return $expected == $subject;
+        return $expected == $value;
     }
 
-    static function notLike($expected, $subject)
+    static function notLike($expected, $value)
     {
-        return $expected != $subject;
+        return $expected != $value;
     }
 
-    static function void($condition)
+    static function void($value)
     {
-        return empty($condition);
+        return empty($value);
     }
 
-    static function notVoid($condition)
+    static function notVoid($value)
     {
-        return ! self::void($condition);
+        return ! self::void($value);
     }
 
-    static function null($condition)
+    static function null($value)
     {
-        return is_null($condition);
+        return is_null($value);
     }
 
-    static function notNull($condition)
+    static function notNull($value)
     {
-        return ! self::null($condition);
+        return ! self::null($value);
     }
 
     static function number($number)
