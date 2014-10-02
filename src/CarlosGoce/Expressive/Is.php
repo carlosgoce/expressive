@@ -2,9 +2,9 @@
 
 namespace CarlosGoce\Expressive;
 
-use CarlosGoce\Expressive\Behavior\Express;
+use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
 
-class Is extends Express
+class Is extends AllowNonStaticCalls
 {
     static function true($condition)
     {

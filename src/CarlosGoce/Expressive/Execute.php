@@ -2,9 +2,9 @@
 
 namespace CarlosGoce\Expressive;
 
-use CarlosGoce\Expressive\Behavior\Express;
+use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
 
-class Execute extends Express
+class Execute extends AllowNonStaticCalls
 {
     static function it(\Closure $callback)
     {

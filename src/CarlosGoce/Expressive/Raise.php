@@ -2,9 +2,9 @@
 
 namespace CarlosGoce\Expressive;
 
-use CarlosGoce\Expressive\Behavior\Express;
+use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
 
-class Raise extends Express
+class Raise extends AllowNonStaticCalls
 {
     static function ifTrue($condition, \Exception $exception)
     {

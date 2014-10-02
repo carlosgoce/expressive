@@ -4,7 +4,7 @@ Adds syntactical sugar to your conditional checks and more.
 
 [![Build Status](https://travis-ci.org/carlosgoce/expressive.svg?branch=master)](https://travis-ci.org/carlosgoce/expressive)
 
-### Notes
+## Notes
 - Like methods use == comparison instead of ===
 - You can make your method call in static or non static way
 
@@ -46,7 +46,19 @@ Raise::unlessFalse($condition, \Exception $exception);
 ### use CarlosGoce\Expressive\Execute
 ```php
 //Executes a closure and returns its value
-it(\Closure $callback);
-ifTrue($condition, \Closure $callback);
-ifFalse($condition, \Closure $callback);
+Execute::it(\Closure $callback);
+Execute::ifTrue($condition, \Closure $callback);
+Execute::ifFalse($condition, \Closure $callback);
+```
+
+## Express Facade
+You can also use the express facade so you won't need to import all
+the classes. You can use it in a static way or as non static
+to easier mocking.
+
+Examples:
+```php
+Express::execute()->it($closure);
+Express::is()->file($file);
+Express::raise()->unlessTrue($condition, \Exception $exception);
 ```
