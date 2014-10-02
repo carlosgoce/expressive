@@ -32,4 +32,18 @@ class RaiseSpec extends ObjectBehavior
         $this->ifFalse(true, new \Exception());
     }
 
+    function it_throws_exceptions_unless_true()
+    {
+        $this->shouldThrow(new \PhpSpec\Exception\Exception())->duringUnlessTrue(false, new \PhpSpec\Exception\Exception);
+        $this->shouldThrow(new \Exception())->duringUnlessTrue(false, new \Exception);
+        $this->unlessTrue(true, new \Exception());
+    }
+
+    function it_throws_exceptions_unless_false()
+    {
+        $this->shouldThrow(new \PhpSpec\Exception\Exception())->duringUnlessFalse(true, new \PhpSpec\Exception\Exception);
+        $this->shouldThrow(new \Exception())->duringUnlessFalse(true, new \Exception);
+        $this->unlessFalse(false, new \Exception());
+    }
+
 }

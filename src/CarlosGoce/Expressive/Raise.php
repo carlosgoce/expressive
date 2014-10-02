@@ -20,4 +20,14 @@ class Raise extends Express
         }
     }
 
+    static function unlessTrue($condition, \Exception $exception)
+    {
+        self::ifFalse($condition, $exception);
+    }
+
+    static function unlessFalse($condition, \Exception $exception)
+    {
+        self::ifTrue($condition, $exception);
+    }
+
 }

@@ -9,20 +9,29 @@ Adds syntactical sugar to your conditional checks.
 
 ## use CarlosGoce\Expressive\Is
 ```php
+//Conditionals
 Is::true($condition);
 Is::false($condition);
-Is::inArray($needle, array $haystack);
-Is::file($file);
 Is::like($condition);
 Is::notLike($condition);
+
+//Arrays
+Is::inArray($needle, array $haystack);
+
+//Numbers
 Is::number($number);
 Is::notNumber($number);
 Is::numeric($number);
 Is::notNumeric($number);
+
+//Others
+Is::file($file);
 ```
 
 ## use CarlosGoce\Expressive\Raise
 ```php
 Raise::ifTrue($condition, \Exception $exception);
 Raise::ifFalse($condition, \Exception $exception);
+Raise::unlessTrue($condition, \Exception $exception);
+Raise::unlessFalse($condition, \Exception $exception);
 ```
