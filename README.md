@@ -88,7 +88,7 @@ class MyController
     public function myMethod()
     {
         //Easier to use and needs only one import but is more verbose
-        Express::raise()->unlessTrue(Express::Is->null($someValue), new \Exception('Some value is null') );
+        Express::raise()->unlessTrue(Express::Is()->null($someValue), new \Exception('Some value is null') );
     }
 }
 
@@ -110,7 +110,7 @@ class MyController
     public function myMethod()
     {
         //Easier to test
-        $this->raise->unlessTrue($this->is()->null($someValue), new \Exception('Some value is null') );
+        $this->raise->unlessTrue($this->is->null($someValue), new \Exception('Some value is null') );
     }
 }
 
