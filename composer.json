@@ -1,0 +1,23 @@
+{
+    "name": "carlosgoce/expressive",
+    "description": "Adds syntactical sugar to your conditional checks and more",
+    "keywords": ["syntactical", "sugar", "conditionals", "checks"],
+    "authors": [
+        {
+            "name": "Carlos Goce",
+            "email": "carlosgoce@gmail.com",
+            "homepage": "http://www.carlosgoce.com",
+            "role": "Developer"
+        }
+    ],
+    "license": [
+        "MIT"
+    ],
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {"psr-0": {"": "src"}}
+}
