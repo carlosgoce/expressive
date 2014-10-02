@@ -50,6 +50,30 @@ class IsSpec extends ObjectBehavior
         $this->false('0')->shouldReturn(false);
     }
 
+    function it_can_check_if_is_void()
+    {
+        $this->void('')->shouldReturn(true);
+        $this->notVoid('')->shouldReturn(false);
+
+        $this->void('123')->shouldReturn(false);
+        $this->notVoid('123')->shouldReturn(true);
+
+        $this->void(false)->shouldReturn(true);
+        $this->notVoid(false)->shouldReturn(false);
+    }
+
+    function it_can_check_if_is_null()
+    {
+        $this->null(null)->shouldReturn(true);
+        $this->notNull(null)->shouldReturn(false);
+
+        $this->null('123')->shouldReturn(false);
+        $this->notNull('123')->shouldReturn(true);
+
+        $this->null(false)->shouldReturn(false);
+        $this->notNull(false)->shouldReturn(true);
+    }
+
     function it_checks_if_is_a_number()
     {
         $this->number(1)->shouldReturn(true);

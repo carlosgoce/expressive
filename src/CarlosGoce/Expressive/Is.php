@@ -26,6 +26,26 @@ class Is extends Express
         return $condition == false;
     }
 
+    static function void($condition)
+    {
+        return empty($condition);
+    }
+
+    static function notVoid($condition)
+    {
+        return ! self::void($condition);
+    }
+
+    static function null($condition)
+    {
+        return is_null($condition);
+    }
+
+    static function notNull($condition)
+    {
+        return ! self::null($condition);
+    }
+
     static function number($number)
     {
         return is_int($number) || is_float($number);

@@ -14,6 +14,10 @@ Is::true($condition);
 Is::false($condition);
 Is::like($condition);
 Is::notLike($condition);
+Is::void($condition);
+Is::notVoid($condition);
+Is::null($condition);
+Is::notNull($condition);
 
 //Arrays
 Is::inArray($needle, array $haystack);
