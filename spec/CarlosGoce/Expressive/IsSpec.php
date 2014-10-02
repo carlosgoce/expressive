@@ -17,7 +17,7 @@ class IsSpec extends ObjectBehavior
     {
         $this->shouldHaveType('CarlosGoce\Expressive\Is');
     }
-    
+
     function it_can_check_if_true()
     {
         $this->true(true)->shouldReturn(true);
