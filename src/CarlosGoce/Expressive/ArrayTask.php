@@ -94,13 +94,29 @@ class ArrayTask extends AllowNonStaticCalls
      * Returns a new array after running the closure
      * with a value/key arguments. You can use reference on the value to modify it
      * @param array $array
-     * @param callable $function
+     * @param callable $callback
      * @return array
      */
-    static function walk(array $array, \Closure $function)
+    static function walk(array $array, \Closure $callback)
     {
-        array_walk($array, $function);
+        array_walk($array, $callback);
 
         return $array;
+    }
+
+    /**
+     * If no callback is given all elements that cast to false
+     * will be removed.
+     * @param array $array
+     * @param callable $callback
+     * @return array
+     */
+    static function filter(array $array, \Closure $callback = null)
+    {
+        if ($callback === null) {
+            return array_filter($array);
+        }
+
+        return array_filter($array, $callback);
     }
 }

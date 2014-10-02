@@ -87,4 +87,12 @@ class ArrayTaskSpec extends ObjectBehavior
             throw new \Exception();
         }
     }
+
+    function it_can_filter_arrays()
+    {
+        $this->filter([1,0,3])->shouldReturn([0 => 1, 2 => 3]);
+        $this->filter([1,2,3], function($element) {
+            return $element !== 2;
+        })->shouldReturn([0 => 1, 2 => 3]);
+    }
 }

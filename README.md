@@ -56,7 +56,8 @@ Execute::ifFalse($value, \Closure $callback);
 ```php
 ArrayTask::changeKeysCase(array $array, $case = CASE_LOWER);
 ArrayTask::count(array $array);
-ArrayTask::keys($array);
+ArrayTask::filter(array $array, \Closure $callback = null);
+ArrayTask::keys(array $array);
 ArrayTask::pluck(array $array, $key)
 ArrayTask::size(array $array); //alias of count
 ArrayTask::shuffle(array $array);
