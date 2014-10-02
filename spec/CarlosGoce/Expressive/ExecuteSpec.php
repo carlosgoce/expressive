@@ -20,7 +20,7 @@ class ExecuteSpec extends ObjectBehavior
 
     function it_can_execute_a_closure_and_return_its_value()
     {
-        $this->act(function(){
+        $this->it(function(){
             return true;
         })->shouldReturn(true);
     }

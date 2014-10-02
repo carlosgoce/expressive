@@ -6,7 +6,7 @@ use CarlosGoce\Expressive\Behavior\Express;
 
 class Execute extends Express
 {
-    static function act(\Closure $callback)
+    static function it(\Closure $callback)
     {
         return $callback();
     }
