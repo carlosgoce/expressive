@@ -46,7 +46,7 @@ Raise::unlessFalse($condition, \Exception $exception);
 ### use CarlosGoce\Expressive\Execute
 ```php
 //Executes a closure and returns its value
-it(\Closure $callback);
-ifTrue($condition, \Closure $callback);
-ifFalse($condition, \Closure $callback);
+Execute::it(\Closure $callback);
+Execute::ifTrue($condition, \Closure $callback);
+Execute::ifFalse($condition, \Closure $callback);
 ```
