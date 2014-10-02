@@ -5,8 +5,8 @@ Adds syntactical sugar to your conditional checks.
 [![Build Status](https://travis-ci.org/carlosgoce/expressive.svg?branch=master)](https://travis-ci.org/carlosgoce/expressive)
 
 ### Notes
-· Like methods use == comparison instead of ===
-· You can make your method call in static or non static way
+- Like methods use == comparison instead of ===
+- You can make your method call in static or non static way
 
 ## use CarlosGoce\Expressive\Is
 ```php
