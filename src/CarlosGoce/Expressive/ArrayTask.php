@@ -6,8 +6,8 @@ use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
 
 class ArrayTask extends AllowNonStaticCalls
 {
+
     /**
-     * Return the keys of the given array
      * @param array $array
      * @return array
      */
@@ -25,5 +25,19 @@ class ArrayTask extends AllowNonStaticCalls
     static function changeKeysCase(array $array, $case = CASE_LOWER)
     {
         return array_change_key_case($array, $case);
+    }
+
+    /**
+     * @param array $array
+     * @return array
+     */
+    static function values(array $array)
+    {
+        return array_values($array);
+    }
+
+    static function count(array $array)
+    {
+        return count($array);
     }
 }

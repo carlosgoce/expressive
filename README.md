@@ -9,7 +9,7 @@ Adds syntactical sugar to your conditional checks, arrays and more.
 - You can make your method call in static or non static way
 - If a method is not found an UndefinedMethodException will be throwed
 
-### CarlosGoce\Expressive\Is
+#### CarlosGoce\Expressive\Is
 ```php
 //Conditionals
 Is::true($value);
@@ -36,7 +36,7 @@ Is::notNumeric($number);
 Is::file($file);
 ```
 
-### CarlosGoce\Expressive\Raise
+#### CarlosGoce\Expressive\Raise
 ```php
 Raise::ifTrue($condition, \Exception $exception);
 Raise::ifFalse($condition, \Exception $exception);
@@ -44,7 +44,7 @@ Raise::unlessTrue($condition, \Exception $exception);
 Raise::unlessFalse($condition, \Exception $exception);
 ```
 
-### CarlosGoce\Expressive\Execute
+#### CarlosGoce\Expressive\Execute
 ```php
 //Executes a closure and returns its value
 Execute::it(\Closure $callback);
@@ -52,13 +52,15 @@ Execute::ifTrue($value, \Closure $callback);
 Execute::ifFalse($value, \Closure $callback);
 ```
 
-## CarlosGoce\Expressive\ArrayTask
+#### CarlosGoce\Expressive\ArrayTask
 ```php
 ArrayTask::keys($array);
 ArrayTask::changeKeysCase(array $array, $case = CASE_LOWER);
+ArrayTask::values(array $array);
+ArrayTask::count(array $array);
 ```
 
-## Express Facade
+#### Express Facade
 You can also use the express facade so you won't need to import all
 the classes. You can use it in a static way or as non static
 to easier mocking.

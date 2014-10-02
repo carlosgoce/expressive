@@ -30,4 +30,16 @@ class ArrayTaskSpec extends ObjectBehavior
         $this->changeKeysCase(['HELLO' => 1, 'WoRld' => 2], CASE_LOWER)->shouldReturn(['hello' => 1, 'world' => 2]);
         $this->changeKeysCase(['HELLO' => 1, 'WoRld' => 2], CASE_UPPER)->shouldReturn(['HELLO' => 1, 'WORLD' => 2]);
     }
+
+    function it_can_get_array_values()
+    {
+        $this->values(['hello' => 1, 'world' => 2])->shouldReturn([1, 2]);
+    }
+
+    function it_can_count_array_elements()
+    {
+        $this->count([])->shouldReturn(0);
+        $this->count([1, 2, 3])->shouldReturn(3);
+    }
+
 }
