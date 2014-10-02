@@ -128,7 +128,7 @@ class MyController
 
     public function myMethod()
     {
-        //easier to test and use lest imports but is more verbose
+        //easier to test and use less imports but is more verbose
         $this->express->raise()->unlessTrue( $this->express->is()->null($someValue), new \Exception('Some value is null') );
     }
 }
