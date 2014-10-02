@@ -13,8 +13,10 @@ Adds syntactical sugar to your conditional checks.
 //Conditionals
 Is::true($condition);
 Is::false($condition);
-Is::like($condition);
-Is::notLike($condition);
+Is::equalTo($expected, $subject);
+Is::notEqualTo($expected, $subject);
+Is::like($expected, $subject);
+Is::notLike($expected, $subject);
 Is::void($condition);
 Is::notVoid($condition);
 Is::null($condition);

@@ -34,20 +34,25 @@ class IsSpec extends ObjectBehavior
         $this->false('0')->shouldReturn(false);
     }
 
-    function it_can_check_if_is_like()
+    function it_checks_if_is_equalTo()
     {
-        $this->like(true)->shouldReturn(true);
-        $this->like(false)->shouldReturn(false);
-        $this->like(1)->shouldReturn(true);
-        $this->like('1')->shouldReturn(true);
+        $this->equalTo('subject', 'subject')->shouldReturn(true);
+        $this->equalTo('another', 'subject')->shouldReturn(false);
+
+        $this->notEqualTo('subject', 'subject')->shouldReturn(false);
+        $this->notEqualTo('another', 'subject')->shouldReturn(true);
+
+        $this->equalTo(1, 'true')->shouldReturn(false);
     }
 
-    function it_can_check_if_is_not_like()
+    function it_can_check_if_is_like()
     {
-        $this->false(false)->shouldReturn(true);
-        $this->false(true)->shouldReturn(false);
-        $this->false(0)->shouldReturn(false);
-        $this->false('0')->shouldReturn(false);
+        $this->like('subject', 'subject')->shouldReturn(true);
+        $this->like('another', 'subject')->shouldReturn(false);
+        $this->notLike('subject', 'subject')->shouldReturn(false);
+        $this->notLike('another', 'subject')->shouldReturn(true);
+
+        $this->like('1', true)->shouldReturn(true);
     }
 
     function it_can_check_if_is_void()

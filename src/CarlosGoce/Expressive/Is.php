@@ -16,14 +16,24 @@ class Is extends Express
         return $condition === false;
     }
 
-    static function like($condition)
+    static function equalTo($expected, $subject)
     {
-        return $condition == true;
+        return $expected === $subject;
     }
 
-    static function notLike($condition)
+    static function notEqualTo($expected, $subject)
     {
-        return $condition == false;
+        return $expected !== $subject;
+    }
+
+    static function like($expected, $subject)
+    {
+        return $expected == $subject;
+    }
+
+    static function notLike($expected, $subject)
+    {
+        return $expected != $subject;
     }
 
     static function void($condition)
