@@ -1,6 +1,6 @@
 Expressive
 ==========
-Adds syntactical sugar to your conditional checks and more.
+Adds syntactical sugar to your conditional checks, arrays and more.
 
 [![Build Status](https://travis-ci.org/carlosgoce/expressive.svg?branch=master)](https://travis-ci.org/carlosgoce/expressive)
 
@@ -9,7 +9,7 @@ Adds syntactical sugar to your conditional checks and more.
 - You can make your method call in static or non static way
 - If a method is not found an UndefinedMethodException will be throwed
 
-### use CarlosGoce\Expressive\Is
+### CarlosGoce\Expressive\Is
 ```php
 //Conditionals
 Is::true($value);
@@ -36,7 +36,7 @@ Is::notNumeric($number);
 Is::file($file);
 ```
 
-### use CarlosGoce\Expressive\Raise
+### CarlosGoce\Expressive\Raise
 ```php
 Raise::ifTrue($condition, \Exception $exception);
 Raise::ifFalse($condition, \Exception $exception);
@@ -44,12 +44,17 @@ Raise::unlessTrue($condition, \Exception $exception);
 Raise::unlessFalse($condition, \Exception $exception);
 ```
 
-### use CarlosGoce\Expressive\Execute
+### CarlosGoce\Expressive\Execute
 ```php
 //Executes a closure and returns its value
 Execute::it(\Closure $callback);
 Execute::ifTrue($value, \Closure $callback);
 Execute::ifFalse($value, \Closure $callback);
+```
+
+## CarlosGoce\Expressive\ArrayTask
+```php
+ArrayTask::keys($array);
 ```
 
 ## Express Facade
@@ -62,6 +67,7 @@ Examples:
 Express::execute()->it($closure);
 Express::is()->file($file);
 Express::raise()->unlessTrue($condition, \Exception $exception);
+Express::arrayTask()->keys($array);
 ```
 
 ## Usage

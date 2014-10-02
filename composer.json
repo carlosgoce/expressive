@@ -1,7 +1,7 @@
 {
     "name": "carlosgoce/expressive",
-    "description": "Adds syntactical sugar to your conditional checks and more",
-    "keywords": ["syntactical", "sugar", "conditionals", "checks"],
+    "description": "Adds syntactical sugar to your conditional checks, arrays and more",
+    "keywords": ["syntactical", "sugar", "conditionals", "checks", "arrays"],
     "authors": [
         {
             "name": "Carlos Goce",
