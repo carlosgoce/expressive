@@ -64,6 +64,7 @@ ArrayTask::shuffle(array $array);
 ArrayTask::values(array $array);
 ArrayTask::walk(array $array, \Closure $function);
 ArrayTask::merge(array $arrays);
+ArrayTask::reverse(array $array, $preserveKeys = false);
 ```
 
 #### Express Facade

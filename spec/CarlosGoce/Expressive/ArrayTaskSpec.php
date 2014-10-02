@@ -101,4 +101,10 @@ class ArrayTaskSpec extends ObjectBehavior
         $this->merge([1], [2])->shouldBe([1, 2]);
         $this->merge([1,2,3], [4,5,6], [7,8,9])->shouldBeLike([1,2,3,4,5,6,7,8,9]);
     }
+
+    function it_can_reverse_arrays()
+    {
+        $this->reverse([1,2,3])->shouldReturn([3,2,1]);
+        $this->reverse([1])->shouldReturn([1]);
+    }
 }

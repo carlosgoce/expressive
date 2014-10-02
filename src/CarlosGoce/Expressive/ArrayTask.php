@@ -131,4 +131,18 @@ class ArrayTask extends AllowNonStaticCalls
     {
         return call_user_func_array('array_merge', func_get_args());
     }
+
+    /**
+     * @param array $array
+     * @param bool $preserveKeys
+     * @return array
+     */
+    static function reverse(array $array, $preserveKeys = false)
+    {
+        if ($preserveKeys === false) {
+            $preserveKeys = null;
+        }
+
+        return array_reverse($array);
+    }
 }
