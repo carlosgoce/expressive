@@ -63,6 +63,7 @@ ArrayTask::size(array $array); //alias of count
 ArrayTask::shuffle(array $array);
 ArrayTask::values(array $array);
 ArrayTask::walk(array $array, \Closure $function);
+ArrayTask::merge(array $arrays);
 ```
 
 #### Express Facade

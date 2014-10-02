@@ -119,4 +119,16 @@ class ArrayTask extends AllowNonStaticCalls
 
         return array_filter($array, $callback);
     }
+
+    /**
+     * Merge two or more arrays
+     * You can give it more arrays
+     * @param array $array1
+     * @param array $array2
+     * @return array
+     */
+    static function merge(array $array1, array $array2)
+    {
+        return call_user_func_array('array_merge', func_get_args());
+    }
 }

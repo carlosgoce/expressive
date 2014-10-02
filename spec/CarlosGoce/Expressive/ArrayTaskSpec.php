@@ -95,4 +95,10 @@ class ArrayTaskSpec extends ObjectBehavior
             return $element !== 2;
         })->shouldReturn([0 => 1, 2 => 3]);
     }
+
+    function it_can_merge_arrays()
+    {
+        $this->merge([1], [2])->shouldBe([1, 2]);
+        $this->merge([1,2,3], [4,5,6], [7,8,9])->shouldBeLike([1,2,3,4,5,6,7,8,9]);
+    }
 }
