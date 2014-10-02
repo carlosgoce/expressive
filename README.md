@@ -110,7 +110,7 @@ class MyController
     public function myMethod()
     {
         //Easier to test
-        $this->raise->unlessTrue($this->is->null($someValue), new \Exception('Some value is null') );
+        $this->raise->unlessTrue($this->is()->null($someValue), new \Exception('Some value is null') );
     }
 }
 
