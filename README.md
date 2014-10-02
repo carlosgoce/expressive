@@ -1,6 +1,6 @@
 Expressive
 ==========
-Adds syntactical sugar to your conditional checks.
+Adds syntactical sugar to your conditional checks and more.
 
 [![Build Status](https://travis-ci.org/carlosgoce/expressive.svg?branch=master)](https://travis-ci.org/carlosgoce/expressive)
 
