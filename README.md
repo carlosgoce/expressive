@@ -8,7 +8,7 @@ Adds syntactical sugar to your conditional checks.
 - Like methods use == comparison instead of ===
 - You can make your method call in static or non static way
 
-## use CarlosGoce\Expressive\Is
+### use CarlosGoce\Expressive\Is
 ```php
 //Conditionals
 Is::true($condition);
@@ -33,7 +33,7 @@ Is::notNumeric($number);
 Is::file($file);
 ```
 
-## use CarlosGoce\Expressive\Raise
+### use CarlosGoce\Expressive\Raise
 ```php
 Raise::ifTrue($condition, \Exception $exception);
 Raise::ifFalse($condition, \Exception $exception);
