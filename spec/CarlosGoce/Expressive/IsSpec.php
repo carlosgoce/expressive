@@ -38,10 +38,6 @@ class IsSpec extends ObjectBehavior
     {
         $this->equalTo('subject', 'subject')->shouldReturn(true);
         $this->equalTo('another', 'subject')->shouldReturn(false);
-
-        $this->notEqualTo('subject', 'subject')->shouldReturn(false);
-        $this->notEqualTo('another', 'subject')->shouldReturn(true);
-
         $this->equalTo(1, 'true')->shouldReturn(false);
     }
 
@@ -49,34 +45,21 @@ class IsSpec extends ObjectBehavior
     {
         $this->like('subject', 'subject')->shouldReturn(true);
         $this->like('another', 'subject')->shouldReturn(false);
-        $this->notLike('subject', 'subject')->shouldReturn(false);
-        $this->notLike('another', 'subject')->shouldReturn(true);
-
         $this->like('1', true)->shouldReturn(true);
     }
 
     function it_can_check_if_is_void()
     {
         $this->void('')->shouldReturn(true);
-        $this->notVoid('')->shouldReturn(false);
-
         $this->void('123')->shouldReturn(false);
-        $this->notVoid('123')->shouldReturn(true);
-
         $this->void(false)->shouldReturn(true);
-        $this->notVoid(false)->shouldReturn(false);
     }
 
     function it_can_check_if_is_null()
     {
         $this->null(null)->shouldReturn(true);
-        $this->notNull(null)->shouldReturn(false);
-
         $this->null('123')->shouldReturn(false);
-        $this->notNull('123')->shouldReturn(true);
-
         $this->null(false)->shouldReturn(false);
-        $this->notNull(false)->shouldReturn(true);
     }
 
     function it_checks_if_is_a_number()
@@ -87,26 +70,11 @@ class IsSpec extends ObjectBehavior
         $this->number(true)->shouldReturn(false);
     }
 
-    function it_checks_if_is_not_a_number()
-    {
-        $this->notNumber(1)->shouldReturn(false);
-        $this->notNumber(500.45)->shouldReturn(false);
-        $this->notNumber('1')->shouldReturn(true);
-        $this->notNumber(true)->shouldReturn(true);
-    }
-
     function it_checks_if_is_like_a_number()
     {
         $this->numeric(1)->shouldReturn(true);
         $this->numeric('1')->shouldReturn(true);
         $this->numeric(true)->shouldReturn(false);
-    }
-
-    function it_checks_if_is_not_like_a_number()
-    {
-        $this->notNumeric(1)->shouldReturn(false);
-        $this->notNumeric('1')->shouldReturn(false);
-        $this->notNumeric(true)->shouldReturn(true);
     }
 
     function it_can_check_if_element_is_in_array()

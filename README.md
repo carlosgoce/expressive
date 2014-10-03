@@ -9,32 +9,37 @@ Adds syntactical sugar to your conditional checks, arrays and more.
 - You can make your method call in static or non static way
 - If a method is not found an UndefinedMethodException will be throwed
 
+
 #### CarlosGoce\Expressive\Is
 ```php
 //Conditionals
 Is::true($value);
 Is::false($value);
 Is::equalTo($expected, $value);
-Is::notEqualTo($expected, $value);
 Is::like($expected, $value);
-Is::notLike($expected, $value);
 Is::void($value);
-Is::notVoid($value);
 Is::null($value);
-Is::notNull($value);
-
-//Arrays
 Is::inArray($needle, array $haystack);
-
-//Numbers
 Is::number($number);
-Is::notNumber($number);
 Is::numeric($number);
-Is::notNumeric($number);
-
-//Others
 Is::file($file);
 ```
+
+
+#### CarlosGoce\Expressive\Not
+```php
+Not::true($value);
+Not::false($value);
+Not::equalTo($expected, $value);
+Not::like($expected, $value);
+Not::void($value);
+Not::null($value);
+Not::inArray($needle, array $haystack);
+Not::number($number);
+Not::numeric($number);
+Not::file($file);
+```
+
 
 #### CarlosGoce\Expressive\Raise
 ```php

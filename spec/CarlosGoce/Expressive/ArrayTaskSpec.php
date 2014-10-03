@@ -4,6 +4,7 @@ namespace spec\CarlosGoce\Expressive;
 
 use CarlosGoce\Expressive\ArrayTask;
 use CarlosGoce\Expressive\Is;
+use CarlosGoce\Expressive\Not;
 use PhpSpec\Exception\Exception;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -83,7 +84,7 @@ class ArrayTaskSpec extends ObjectBehavior
             $value += 10;
         });
 
-        if (Is::notEqualTo([11,12,13], $array->getWrappedObject())) {
+        if (Not::equalTo([11,12,13], $array->getWrappedObject())) {
             throw new \Exception();
         }
     }

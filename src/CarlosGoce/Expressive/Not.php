@@ -3,56 +3,57 @@
 namespace CarlosGoce\Expressive;
 
 use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
+use CarlosGoce\Expressive\Exception\UndefinedMethodException;
 
-class Is extends AllowNonStaticCalls
+class Not extends AllowNonStaticCalls
 {
     static function true($value)
     {
-        return $value === true;
+        return ! Is::true($value);
     }
 
     static function false($value)
     {
-        return $value === false;
+        return ! Is::false($value);
     }
 
     static function equalTo($expected, $value)
     {
-        return $expected === $value;
+        return $expected !== $value;
     }
 
     static function like($expected, $value)
     {
-        return $expected == $value;
+        return $expected != $value;
     }
 
     static function void($value)
     {
-        return empty($value);
+        return ! empty($value);
     }
 
     static function null($value)
     {
-        return is_null($value);
+        return ! is_null($value);
     }
 
     static function number($number)
     {
-        return is_int($number) || is_float($number);
+        return ! Is::number($number);
     }
 
     static function numeric($number)
     {
-        return is_numeric($number);
+        return ! is_numeric($number);
     }
 
     static function inArray($needle, array $haystack)
     {
-        return in_array($needle, $haystack);
+        return ! in_array($needle, $haystack);
     }
 
     static function file($file)
     {
-        return is_file($file);
+        return ! is_file($file);
     }
-}
+} 
