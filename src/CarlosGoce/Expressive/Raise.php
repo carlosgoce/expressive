@@ -15,7 +15,7 @@ class Raise extends AllowNonStaticCalls
 
     static function unless($condition, \Exception $exception)
     {
-        self::when( ! $condition, $exception);
+        self::when(Not::true($condition), $exception);
     }
 
 }
