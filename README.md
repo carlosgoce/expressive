@@ -81,6 +81,7 @@ Examples:
 ```php
 Express::execute()->it($closure);
 Express::is()->file($file);
+Express::not()->file($file);
 Express::raise()->unlessTrue($condition, \Exception $exception);
 Express::arrayTask()->keys($array);
 ```
