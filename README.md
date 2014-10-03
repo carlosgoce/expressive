@@ -43,10 +43,8 @@ Not::file($file);
 
 #### CarlosGoce\Expressive\Raise
 ```php
-Raise::ifTrue($condition, \Exception $exception);
-Raise::ifFalse($condition, \Exception $exception);
-Raise::unlessTrue($condition, \Exception $exception);
-Raise::unlessFalse($condition, \Exception $exception);
+Raise::when($condition, \Exception $exception); //throw exception if condition is true
+Raise::unless($condition, \Exception $exception); //throw exception if condition is false
 ```
 
 #### CarlosGoce\Expressive\Execute
@@ -98,7 +96,7 @@ class MyController
     public function myMethod()
     {
         //Easier to use
-        Raise::unlessFalse(Is::null($someValue), new \Exception('Some value is null') );
+        Raise::when(Is::null($someValue), new \Exception('Some value is null') );
     }
 }
 
@@ -110,7 +108,7 @@ class MyController
     public function myMethod()
     {
         //Easier to use and needs only one import but is more verbose
-        Express::raise()->unlessFalse(Express::Is()->null($someValue), new \Exception('Some value is null') );
+        Express::raise()->when(Express::Is()->null($someValue), new \Exception('Some value is null') );
     }
 }
 
@@ -132,7 +130,7 @@ class MyController
     public function myMethod()
     {
         //Easier to test
-        $this->raise->unlessFalse($this->is->null($someValue), new \Exception('Some value is null') );
+        $this->raise->when($this->is->null($someValue), new \Exception('Some value is null') );
     }
 }
 
@@ -151,7 +149,7 @@ class MyController
     public function myMethod()
     {
         //easier to test and use less imports but is more verbose
-        $this->express->raise()->unlessFalse( $this->express->is()->null($someValue), new \Exception('Some value is null') );
+        $this->express->raise()->when( $this->express->is()->null($someValue), new \Exception('Some value is null') );
     }
 }
 ```

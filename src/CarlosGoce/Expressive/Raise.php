@@ -6,28 +6,16 @@ use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
 
 class Raise extends AllowNonStaticCalls
 {
-    static function ifTrue($value, \Exception $exception)
+    static function when($condition, \Exception $exception)
     {
-        if (Is::true($value)) {
+        if (Is::true($condition)) {
             throw $exception;
         }
     }
 
-    static function ifFalse($value, \Exception $exception)
+    static function unless($condition, \Exception $exception)
     {
-        if (Is::false($value)) {
-            throw $exception;
-        }
-    }
-
-    static function unlessTrue($value, \Exception $exception)
-    {
-        self::ifFalse($value, $exception);
-    }
-
-    static function unlessFalse($value, \Exception $exception)
-    {
-        self::ifTrue($value, $exception);
+        self::when( ! $condition, $exception);
     }
 
 }
