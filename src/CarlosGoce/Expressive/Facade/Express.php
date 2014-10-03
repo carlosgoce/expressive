@@ -6,6 +6,7 @@ use CarlosGoce\Expressive\ArrayTask;
 use CarlosGoce\Expressive\Behavior\AllowNonStaticCalls;
 use CarlosGoce\Expressive\Execute;
 use CarlosGoce\Expressive\Is;
+use CarlosGoce\Expressive\Not;
 use CarlosGoce\Expressive\Raise;
 
 class Express extends AllowNonStaticCalls {
@@ -13,7 +14,8 @@ class Express extends AllowNonStaticCalls {
     protected static $executeInstance;
     protected static $isInstance;
     protected static $raiseInstance;
-    protected static $arrayTask;
+    protected static $arrayTaskInstance;
+    protected static $notInstance;
 
     /**
      * @return Execute
@@ -40,6 +42,18 @@ class Express extends AllowNonStaticCalls {
     }
 
     /**
+     * @return Not
+     */
+    static function not()
+    {
+        if (self::$notInstance === null) {
+            self::$notInstance = new Not();
+        }
+
+        return self::$notInstance;
+    }
+
+    /**
      * @return Raise
      */
     static function raise()
@@ -56,10 +70,10 @@ class Express extends AllowNonStaticCalls {
      */
     static function arrayTask()
     {
-        if (self::$arrayTask === null) {
-            self::$arrayTask = new ArrayTask();
+        if (self::$arrayTaskInstance === null) {
+            self::$arrayTaskInstance = new ArrayTask();
         }
 
-        return self::$arrayTask;
+        return self::$arrayTaskInstance;
     }
 } 
