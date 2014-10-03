@@ -43,16 +43,18 @@ Not::file($file);
 
 #### CarlosGoce\Expressive\Raise
 ```php
-Raise::when($condition, \Exception $exception); //throw exception if condition is true
-Raise::unless($condition, \Exception $exception); //throw exception if condition is false
+//throw exception if condition is true
+Raise::when($condition, \Exception $exception);
+//throw exception if condition is false
+Raise::unless($condition, \Exception $exception);
 ```
 
 #### CarlosGoce\Expressive\Execute
 ```php
 //Executes a closure and returns its value
 Execute::it(\Closure $callback);
-Execute::ifTrue($value, \Closure $callback);
-Execute::ifFalse($value, \Closure $callback);
+Execute::when($condition, \Closure $callback);
+Execute::unless($condition, \Closure $callback);
 ```
 
 #### CarlosGoce\Expressive\ArrayTask

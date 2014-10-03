@@ -11,7 +11,7 @@ class Execute extends AllowNonStaticCalls
         return $callback();
     }
 
-    static function ifTrue($condition, \Closure $callback)
+    static function when($condition, \Closure $callback)
     {
         if (Is::true($condition)) {
             return $callback();
@@ -20,7 +20,7 @@ class Execute extends AllowNonStaticCalls
         return null;
     }
 
-    static function ifFalse($condition, \Closure $callback)
+    static function unless($condition, \Closure $callback)
     {
         if (Is::false($condition)) {
             return $callback();

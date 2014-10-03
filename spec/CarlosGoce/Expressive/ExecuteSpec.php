@@ -31,10 +31,10 @@ class ExecuteSpec extends ObjectBehavior
             return true;
         };
 
-        $this->ifTrue(true, $closure)->shouldReturn(true);
-        $this->ifTrue(false, $closure)->shouldReturn(null);
-        $this->ifFalse(true, $closure)->shouldReturn(null);
-        $this->ifFalse(false, $closure)->shouldReturn(true);
+        $this->when(true, $closure)->shouldReturn(true);
+        $this->when(false, $closure)->shouldReturn(null);
+        $this->unless(true, $closure)->shouldReturn(null);
+        $this->unless(false, $closure)->shouldReturn(true);
     }
 
 }
