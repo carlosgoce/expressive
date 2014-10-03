@@ -12,7 +12,6 @@ Adds syntactical sugar to your conditional checks, arrays and more.
 
 #### CarlosGoce\Expressive\Is
 ```php
-//Conditionals
 Is::true($value);
 Is::false($value);
 Is::equalTo($expected, $value);
@@ -43,9 +42,7 @@ Not::file($file);
 
 #### CarlosGoce\Expressive\Raise
 ```php
-//throw exception if condition is true
 Raise::when($condition, \Exception $exception);
-//throw exception if condition is false
 Raise::unless($condition, \Exception $exception);
 ```
 
@@ -82,7 +79,7 @@ Examples:
 Express::execute()->it($closure);
 Express::is()->file($file);
 Express::not()->file($file);
-Express::raise()->unlessTrue($condition, \Exception $exception);
+Express::raise()->unless($condition, \Exception $exception);
 Express::arrayTask()->keys($array);
 ```
 
